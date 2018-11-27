@@ -1,0 +1,188 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.14.3
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/mshipper/sandbox/shortcut-buttons-flatpickr',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package.tgz not in flight; packing
+9 verbose correctMkdir /home/mshipper/.npm correctMkdir not in flight; initializing
+10 info lifecycle shortcut-buttons-flatpickr@0.2.3~prepublish: shortcut-buttons-flatpickr@0.2.3
+11 silly lifecycle shortcut-buttons-flatpickr@0.2.3~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package.tgz',
+12 verbose tar pack   '/home/mshipper/sandbox/shortcut-buttons-flatpickr' ]
+13 verbose tarball /home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package.tgz
+14 verbose folder /home/mshipper/sandbox/shortcut-buttons-flatpickr
+15 verbose addLocalTarball adding from inside cache /home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package.tgz
+16 verbose correctMkdir /home/mshipper/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd shortcut-buttons-flatpickr@0.2.3
+18 verbose afterAdd /home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package/package.json not in flight; writing
+19 verbose correctMkdir /home/mshipper/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package/package.json written
+21 silly publish { name: 'shortcut-buttons-flatpickr',
+21 silly publish   description: 'Shortcut buttons is a plugin for flatpickr that provides users an alternative way to interact with the datetime picker.',
+21 silly publish   version: '0.2.3',
+21 silly publish   main: 'dist/shortcut-buttons-flatpickr.js',
+21 silly publish   scripts:
+21 silly publish    { build: 'run-s build:pre build:dev build:prod',
+21 silly publish      'build:pre': 'rm -rf dist && mkdir -p dist/themes',
+21 silly publish      'build:dev': 'run-s build:ts:dev build:themes:dev',
+21 silly publish      'build:prod': 'run-s build:ts:prod build:types build:themes:prod',
+21 silly publish      'build:ts:dev': 'webpack --config build/webpack.config.ts --mode development',
+21 silly publish      'build:ts:prod': 'webpack --config build/webpack.config.ts --mode production',
+21 silly publish      'build:themes:dev': 'webpack --config build/webpack.themes.ts --mode development',
+21 silly publish      'build:themes:prod': 'webpack --config build/webpack.themes.ts --mode production',
+21 silly publish      'build:types': 'tsc -p tsconfig.declarations.json',
+21 silly publish      prepublishOnly: 'run-s build test',
+21 silly publish      'start:selenium': 'selenium-standalone start',
+21 silly publish      'stop:selenium': 'pkill -f selenium',
+21 silly publish      'start:server': 'forever start -m 1 -c ts-node tests/server.ts',
+21 silly publish      'stop:server': 'forever stopall',
+21 silly publish      test: 'run-s test:unit test:functional',
+21 silly publish      'test:unit': 'mocha -r jsdom-global/register -r ts-node/register tests/unit/**/*.test.ts',
+21 silly publish      'test:coverage': 'nyc -r lcov -r html -r text -n src/**/*.ts -e .ts -i ts-node/register -i jsdom-global/register --report-dir tests/coverage mocha tests/unit/**/*.test.ts',
+21 silly publish      'test:functional': 'yarn test:functional:pre && wdio tests/wdio.conf.js',
+21 silly publish      'test:functional:pre': 'rm -rf tests/public/dependencies && mkdir -p tests/public/dependencies && cp -r dist/ tests/public/dependencies/shortcut-buttons-flatpickr && cp -r node_modules/flatpickr/dist/ tests/public/dependencies/flatpickr',
+21 silly publish      'watch:ts': 'webpack --config build/webpack.config.ts --mode development --watch',
+21 silly publish      'watch:themes': 'webpack --config build/webpack.themes.ts --mode development --watch' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/jcsmorais/shortcut-buttons-flatpickr.git' },
+21 silly publish   keywords:
+21 silly publish    [ 'shortcut',
+21 silly publish      'buttons',
+21 silly publish      'flatpickr',
+21 silly publish      'plugin',
+21 silly publish      'calendar',
+21 silly publish      'javascript' ],
+21 silly publish   author: { name: 'João Morais' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/jcsmorais/shortcut-buttons-flatpickr/issues' },
+21 silly publish   homepage: 'https://github.com/jcsmorais/shortcut-buttons-flatpickr#readme',
+21 silly publish   devDependencies:
+21 silly publish    { '@types/expect.js': '^0.3.29',
+21 silly publish      '@types/express': '^4.16.0',
+21 silly publish      '@types/jsdom': '^12.2.0',
+21 silly publish      '@types/mocha': '^5.2.5',
+21 silly publish      '@types/node': '^10.11.7',
+21 silly publish      '@types/sinon': '^5.0.5',
+21 silly publish      '@types/stylus': '^0.48.30',
+21 silly publish      '@types/webdriverio': '^4.10.4',
+21 silly publish      '@types/webpack': '^4.4.16',
+21 silly publish      'autoprefixer-stylus': '^0.14.0',
+21 silly publish      coveralls: '3.0.2',
+21 silly publish      'css-loader': '^1.0.0',
+21 silly publish      'expect.js': '^0.3.1',
+21 silly publish      express: '^4.16.4',
+21 silly publish      'extract-text-webpack-plugin': '^4.0.0-beta.0',
+21 silly publish      flatpickr: '4.5.1',
+21 silly publish      forever: '^0.15.3',
+21 silly publish      jsdom: '^13.0.0',
+21 silly publish      'jsdom-global': '^3.0.2',
+21 silly publish      minimist: '^1.2.0',
+21 silly publish      mocha: '^5.2.0',
+21 silly publish      nyc: '^13.0.1',
+21 silly publish      'postcss-loader': '3.0.0',
+21 silly publish      'selenium-standalone': '^6.15.3',
+21 silly publish      sinon: '^7.1.1',
+21 silly publish      stylus: '^0.54.5',
+21 silly publish      'stylus-loader': '^3.0.2',
+21 silly publish      'ts-loader': '^5.2.0',
+21 silly publish      'ts-node': '^7.0.0',
+21 silly publish      tslint: '5.11.0',
+21 silly publish      'tslint-loader': '^3.6.0',
+21 silly publish      typescript: '^3.1.3',
+21 silly publish      'wdio-mocha-framework': '^0.6.3',
+21 silly publish      'wdio-spec-reporter': '^0.1.5',
+21 silly publish      webdriverio: '^4.13.2',
+21 silly publish      webpack: '^4.12.2',
+21 silly publish      'webpack-cli': '^3.0.8',
+21 silly publish      'yarn-run-all': '^3.1.1' },
+21 silly publish   dependencies: {},
+21 silly publish   browserslist: [ 'ie >= 9', 'last 2 versions', 'safari >= 7' ],
+21 silly publish   readme: '# Shortcut buttons\n[![CircleCI](https://circleci.com/gh/jcsmorais/shortcut-buttons-flatpickr/tree/master.svg?style=shield)](https://circleci.com/gh/jcsmorais/shortcut-buttons-flatpickr/tree/master)\n[![Coverage Status](https://coveralls.io/repos/github/jcsmorais/shortcut-buttons-flatpickr/badge.svg?branch=master)](https://coveralls.io/github/jcsmorais/shortcut-buttons-flatpickr?branch=master)\n[![npm version](https://badge.fury.io/js/shortcut-buttons-flatpickr.svg)](https://badge.fury.io/js/shortcut-buttons-flatpickr)\n[![flatpickr](https://img.shields.io/badge/flatpickr-4.5.1-brightgreen.svg)](https://flatpickr.js.org/)\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/jcsmorais/shortcut-buttons-flatpickr/master/LICENSE)\n[![](https://data.jsdelivr.com/v1/package/npm/shortcut-buttons-flatpickr/badge)](https://www.jsdelivr.com/package/npm/shortcut-buttons-flatpickr)\n\nShortcut buttons is a plugin for [flatpickr](https://flatpickr.js.org/) that provides users an alternative way to interact with the datetime picker.\n\n![material_blue](https://user-images.githubusercontent.com/712667/39291812-091dd72c-48e9-11e8-9d3f-1eefd57be20a.png)\n![material_green](https://user-images.githubusercontent.com/712667/39291811-090776bc-48e9-11e8-9a79-deed7306be37.png)\n![confetti](https://user-images.githubusercontent.com/712667/39291814-0938bbc8-48e9-11e8-81b1-14a05f6fcd99.png)\n![material_red](https://user-images.githubusercontent.com/712667/39291810-08ee5042-48e9-11e8-8f82-25eb76ce1068.png)\n![light](https://user-images.githubusercontent.com/712667/39291809-08ba48d8-48e9-11e8-942d-33f68742f94f.png)\n![dark](https://user-images.githubusercontent.com/712667/39291815-094fdbbe-48e9-11e8-9d54-f822d299317c.png)\n\n# Motivation\nShortcut buttons development has been motivated by the need of having a fast, flexible and seemless alternative way for users to select specific date(s) without being forced to navigate through their calendars and individually select those date(s).\n\n# Installation\nInstalling as a module:\n```bash\nyarn add shortcut-buttons-flatpickr\n```\n\nInstalling on non-module environments:\n```html\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shortcut-buttons-flatpickr@0.1.0/dist/themes/light.min.css">\n<script src="https://cdn.jsdelivr.net/npm/shortcut-buttons-flatpickr@0.1.0/dist/shortcut-buttons-flatpickr.min.js"></script>\n```\n\n# API\n| Params                | Type                     | Description                                                                                                                                                                      |\n|-----------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| `button`              | `Object`, `Object[]`     | Button(s).                                                                                                                                                                       |\n| `[button.attributes]` | `Object`                 | Button\'s attributes.<br/>Supported attributes: `accesskey` and `aria-label`.                                                                                                     |\n| `button.label`        | `string`                 | Button\'s label.                                                                                                                                                                  |\n| `[label]`             | `string`                 | Label including a word/sentence stating that the user can use the calendar or one of the buttons.                                                                                |\n| `onClick`             | `Function`, `Function[]` | Callback(s) invoked when plugin\'s buttons are clicked. Each callback is fed with two parameters:<br/>`index` - the index of the clicked button.<br/>`fp` - flatpickr\'s instance. |\n| `[theme]`             | `string`                 | Flatpickr\'s theme, defaults to `light` if none supplied.                                                                                                                         |\n\n# Usage Examples\n* [Beginning Of Time](http://bit.ly/2jjcQK0)\n* [Clear Date Selection](http://bit.ly/2wrPyYp)\n* [Quick Month Selection](http://bit.ly/2KdleFS)\n* [US Holidays Navigator](http://bit.ly/2raWK9D)\n* [Yesterday, Today and Tomorrow](http://bit.ly/2KrWMC0)\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '746228bd84341cea39be502122f76ed1ca005ce0',
+21 silly publish   _id: 'shortcut-buttons-flatpickr@0.2.3',
+21 silly publish   _shasum: '3b8848dd8abd0e9d9a8efaf0fdd80cc75617823c',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name shortcut-buttons-flatpickr
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry http://socmon-dev.corp.chartercom.com:4873/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'shortcut-buttons-flatpickr',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'shortcut-buttons-flatpickr',
+26 silly mapToRegistry   name: 'shortcut-buttons-flatpickr',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr
+28 verbose publish registryBase http://socmon-dev.corp.chartercom.com:4873/
+29 silly publish uploading /home/mshipper/.npm/shortcut-buttons-flatpickr/0.2.3/package.tgz
+30 verbose request uri http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 2:27:56 PM
+33 verbose request using bearer token for auth
+34 verbose request id ccc808e9270c13d6
+35 http request PUT http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr
+36 http 409 http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr
+37 verbose headers { 'x-powered-by': 'verdaccio/3.8.5',
+37 verbose headers   'access-control-allow-origin': '*',
+37 verbose headers   'content-type': 'application/json; charset=utf-8',
+37 verbose headers   'content-length': '49',
+37 verbose headers   etag: 'W/"31-u1Y+cupz+mmqz86SbSKFOrSYDs8"',
+37 verbose headers   vary: 'Accept-Encoding',
+37 verbose headers   'x-status-cat': 'http://flic.kr/p/aV6jzz',
+37 verbose headers   date: 'Tue, 27 Nov 2018 20:27:56 GMT',
+37 verbose headers   connection: 'keep-alive' }
+38 verbose request invalidating /home/mshipper/.npm/socmon-dev.corp.chartercom.com_4873/shortcut-buttons-flatpickr on PUT
+39 verbose request uri http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr?write=true
+40 verbose request no auth needed
+41 info attempt registry request try #1 at 2:27:56 PM
+42 verbose request using bearer token for auth
+43 http request GET http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr?write=true
+44 http 200 http://socmon-dev.corp.chartercom.com:4873/shortcut-buttons-flatpickr?write=true
+45 verbose headers { 'x-powered-by': 'verdaccio/3.8.5',
+45 verbose headers   'access-control-allow-origin': '*',
+45 verbose headers   'content-type': 'application/json; charset=utf-8',
+45 verbose headers   etag: '"5217f0c103acd1615b8d43a61b51dd61"',
+45 verbose headers   vary: 'Accept-Encoding',
+45 verbose headers   'content-encoding': 'gzip',
+45 verbose headers   'x-status-cat': 'http://flic.kr/p/aVuVsF',
+45 verbose headers   date: 'Tue, 27 Nov 2018 20:27:56 GMT',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'transfer-encoding': 'chunked' }
+46 verbose stack Error: cannot modify pre-existing version
+46 verbose stack     at conflictError (/usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/publish.js:183:11)
+46 verbose stack     at CachingRegistryClient.putNext (/usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/publish.js:145:15)
+46 verbose stack     at /usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/publish.js:128:15
+46 verbose stack     at /usr/lib/node_modules/npm/lib/cache/caching-client.js:53:8
+46 verbose stack     at f (/usr/lib/node_modules/npm/node_modules.bundled/once/once.js:25:25)
+46 verbose stack     at /usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/request.js:76:16
+46 verbose stack     at /usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/request.js:103:12
+46 verbose stack     at f (/usr/lib/node_modules/npm/node_modules.bundled/once/once.js:25:25)
+46 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/request.js:297:12)
+46 verbose stack     at /usr/lib/node_modules/npm/node_modules.bundled/npm-registry-client/lib/request.js:216:7
+47 verbose pkgid shortcut-buttons-flatpickr
+48 verbose cwd /home/mshipper/sandbox/shortcut-buttons-flatpickr
+49 error Linux 3.10.0-862.9.1.el7.x86_64
+50 error argv "/usr/bin/node" "/usr/bin/npm" "publish"
+51 error node v6.14.3
+52 error npm  v3.10.10
+53 error code EPUBLISHCONFLICT
+54 error publish fail Cannot publish over existing version.
+55 error publish fail Update the 'version' field in package.json and try again.
+56 error publish fail
+57 error publish fail To automatically increment version numbers, see:
+58 error publish fail npm help version
+59 verbose exit [ 1, true ]
